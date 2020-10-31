@@ -1,18 +1,20 @@
 <template>
   <header>
     <input
+      v-model="inputValue"
       type="text"
       placeholder="Tap new task..."
-      v-model="inputValue"
-      @keyup.enter="createNewToDo"
+      @keyup.enter="addTodoItem()"
     />
-    <button class="submit" @click="createNewToDo">
+    <button class="submit" @click="addTodoItem()">
       +
     </button>
   </header>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Header',
   data: () => {
@@ -21,15 +23,19 @@ export default {
     };
   },
   methods: {
-    createNewToDo: function() {
-      this.$emit('createToDo', this.inputValue);
+    ...mapActions(['addTodo']),
+    addTodoItem() {
+      this.addTodo({
+        id: Math.floor(Math.random() * 100000),
+        name: this.inputValue,
+        done: false,
+      });
       this.inputValue = '';
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 header {
   display: flex;
