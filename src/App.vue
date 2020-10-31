@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <!-- @createToDo="createToDo"  -->
     <Header />
     <div class="container mt-4">
-      <!-- @removeToDo="removeToDo" -->
       <ToDos :todos="allTodos" />
     </div>
   </div>
