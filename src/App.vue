@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <div class="container mt-4">
-      <ToDos :todos="allTodos" />
+      <ToDo :todos="allTodos" />
     </div>
   </div>
 </template>
@@ -10,13 +10,13 @@
 <script>
 import { mapGetters } from 'vuex';
 import Header from './components/Header.vue';
-import ToDos from './components/ToDos';
+import ToDo from './components/ToDo';
 
 export default {
   name: 'App',
   components: {
     Header,
-    ToDos,
+    ToDo,
   },
   computed: {
     ...mapGetters(['allTodos']),

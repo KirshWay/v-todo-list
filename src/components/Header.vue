@@ -4,9 +4,12 @@
       v-model="inputValue"
       type="text"
       placeholder="Tap new task..."
-      @keyup.enter="addTodoItem()"
-    />
-    <button class="submit" @click="addTodoItem()">
+      @keyup.enter="addTodoItem"
+    >
+    <button
+      class="submit"
+      @click="addTodoItem"
+    >
       +
     </button>
   </header>
@@ -29,6 +32,7 @@ export default {
         id: Math.floor(Math.random() * 100000),
         name: this.inputValue,
         done: false,
+        editing: false
       });
       this.inputValue = '';
     },
