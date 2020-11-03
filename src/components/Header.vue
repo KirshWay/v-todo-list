@@ -25,6 +25,10 @@ export default {
       inputValue: '',
     };
   },
+  mounted() {
+    const data = localStorage.getItem('todos')
+    data ? this.$store.state.todos = JSON.parse(data) : null
+  },
   methods: {
     ...mapActions(['addTodo']),
     addTodoItem() {
@@ -33,6 +37,7 @@ export default {
         text: this.inputValue,
         done: false,
       });
+      localStorage.setItem('todos', JSON.stringify(this.$store.state.todos))
       this.inputValue = '';
     },
   },

@@ -25,6 +25,5 @@ export default {
   computed: {
     ...mapGetters(['allTodos'])
   },
-
 };
 </script>

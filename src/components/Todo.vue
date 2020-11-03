@@ -27,6 +27,7 @@
         v-else
         :value="todoDescription"
         @change="todoChangeDescription"
+        @keyup.enter="updateTodoElement(todo)"
         type="text"
         class="col form-control ml-2"
       >

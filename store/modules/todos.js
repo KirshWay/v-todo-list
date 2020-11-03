@@ -1,21 +1,21 @@
 export default {
   state: {
     todos: [
-      {
-        id: 1,
-        text: 'One',
-        done: false,
-      },
-      {
-        id: 2,
-        text: 'Second',
-        done: false,
-      },
-      {
-        id: 3,
-        text: 'Three',
-        done: false,
-      },
+      // {
+      //   id: 1,
+      //   text: 'One',
+      //   done: false,
+      // },
+      // {
+      //   id: 2,
+      //   text: 'Second',
+      //   done: false,
+      // },
+      // {
+      //   id: 3,
+      //   text: 'Three',
+      //   done: false,
+      // },
     ],
   },
   getters: {
@@ -38,6 +38,7 @@ export default {
     },
     del_todo(state, id) {
       state.todos = state.todos.filter((todo) => todo.id !== id);
+      localStorage.setItem('todos', JSON.stringify(state.todos))
     },
     update_todo(state, todo) {
       let i = state.todos.findIndex(el => el.id === todo.id)
