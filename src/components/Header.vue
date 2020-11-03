@@ -30,9 +30,8 @@ export default {
     addTodoItem() {
       this.addTodo({
         id: Math.floor(Math.random() * 100000),
-        name: this.inputValue,
+        text: this.inputValue,
         done: false,
-        editing: false
       });
       this.inputValue = '';
     },

@@ -2,24 +2,20 @@
   <div id="app">
     <Header />
     <div class="container mt-4">
-      <ToDo :todos="allTodos" />
+      <List />
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import Header from './components/Header.vue';
-import ToDo from './components/ToDo';
+import List from './components/List';
 
 export default {
   name: 'App',
   components: {
     Header,
-    ToDo,
-  },
-  computed: {
-    ...mapGetters(['allTodos']),
+    List,
   },
 };
 </script>

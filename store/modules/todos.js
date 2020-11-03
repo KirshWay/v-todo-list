@@ -3,17 +3,17 @@ export default {
     todos: [
       {
         id: 1,
-        name: 'One',
+        text: 'One',
         done: false,
       },
       {
         id: 2,
-        name: 'Second',
+        text: 'Second',
         done: false,
       },
       {
         id: 3,
-        name: 'Three',
+        text: 'Three',
         done: false,
       },
     ],
@@ -28,13 +28,22 @@ export default {
     deleteTodo({ commit }, id) {
       commit('del_todo', id);
     },
+    updateTodo({commit}, todo) {
+      commit('update_todo', todo)
+    }
   },
   mutations: {
     add_todo(state, todo) {
       state.todos.push(todo);
     },
     del_todo(state, id) {
-      state.todos = state.todos.filter((todo) => todo.id != id);
+      state.todos = state.todos.filter((todo) => todo.id !== id);
     },
+    update_todo(state, todo) {
+      let i = state.todos.findIndex(el => el.id === todo.id)
+      if (i !== -1) {
+        state.todos[i] = todo
+      }
+    }
   },
 };
