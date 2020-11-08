@@ -17,28 +17,23 @@
 
 <script>
 import { mapActions } from 'vuex';
-
 export default {
   name: 'Header',
-  data: () => {
-    return {
+  data: () => ({
       inputValue: '',
-    };
-  },
-  mounted() {
-    const data = localStorage.getItem('todos')
-    data ? this.$store.state.todos = JSON.parse(data) : null
-  },
+  }),
   methods: {
     ...mapActions(['addTodo']),
     addTodoItem() {
-      this.addTodo({
-        id: Math.floor(Math.random() * 100000),
-        text: this.inputValue,
-        done: false,
-      });
-      localStorage.setItem('todos', JSON.stringify(this.$store.state.todos))
+      if (this.inputValue !== '') {
+        this.addTodo({
+          id: Math.floor(Math.random() * 100000),
+          text: this.inputValue,
+          done: false,
+        });
+      }
       this.inputValue = '';
+      this.$emit('toggleWelcome', false)
     },
   },
 };

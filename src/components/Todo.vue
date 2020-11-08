@@ -26,10 +26,10 @@
       <input
         v-else
         :value="todoDescription"
-        @change="todoChangeDescription"
-        @keyup.enter="updateTodoElement(todo)"
         type="text"
         class="col form-control ml-2"
+        @change="todoChangeDescription"
+        @keyup.enter="updateTodoElement(todo)"
       >
     </div>
     <button
@@ -58,7 +58,7 @@ export default {
   data: () => {
     return {
       todoDescription: '',
-      editing: false
+      editing: false,
     }
   },
   methods: {

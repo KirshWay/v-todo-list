@@ -1,10 +1,14 @@
 <template>
-  <section class="d-flex flex-column">
+  <section
+    class="todo-collection d-flex flex-column"
+  >
     <div
       v-for="todo in allTodos"
       :key="todo.id"
     >
-      <Todo :todo="todo" />
+      <Todo
+        :todo="todo"
+      />
     </div>
   </section>
 </template>
@@ -15,15 +19,10 @@ import Todo from "@/components/Todo";
 export default {
   name: 'List',
   components: {
-    Todo
-  },
-  data: () => {
-    return {
-      editing: false
-    }
+    Todo,
   },
   computed: {
-    ...mapGetters(['allTodos'])
+    ...mapGetters(['allTodos']),
   },
 };
 </script>
