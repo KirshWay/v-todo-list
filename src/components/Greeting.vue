@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-light text-center display-4">
-    Create Your first Task...
+    Create Your Task...
   </h1>
 </template>
 

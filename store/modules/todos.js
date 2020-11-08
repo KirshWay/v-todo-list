@@ -1,22 +1,6 @@
 export default {
   state: {
-    todos: [
-      // {
-      //   id: 1,
-      //   text: 'One',
-      //   done: false,
-      // },
-      // {
-      //   id: 2,
-      //   text: 'Second',
-      //   done: false,
-      // },
-      // {
-      //   id: 3,
-      //   text: 'Three',
-      //   done: false,
-      // },
-    ],
+    todos: [],
   },
   getters: {
     allTodos: (state) => state.todos,
@@ -34,10 +18,6 @@ export default {
   },
   mutations: {
     add_todo(state, todo) {
-      // if (todo !== '') {
-      //   state.todos.push(todo);
-      // }
-
       todo !== '' ? state.todos.push(todo): null
     },
     del_todo(state, id) {

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header @toggleWelcome="toggleWelcome" />
+    <Header />
     <div class="container mt-4">
-      <Greeting v-if="togglerGreeting" />
+      <Greeting v-if="allTodos.length === 0" />
       <List />
     </div>
   </div>
@@ -12,6 +12,7 @@
 import Header from './components/Header.vue';
 import List from './components/List';
 import Greeting from "@/components/Greeting";
+import {mapGetters} from "vuex";
 export default {
   name: 'App',
   components: {
@@ -19,14 +20,9 @@ export default {
     List,
     Greeting
   },
-  data: () => ({
-    togglerGreeting: true
-  }),
-  methods: {
-    toggleWelcome(arg) {
-      this.togglerGreeting = arg
-    }
-  },
+  computed: {
+    ...mapGetters(['allTodos']),
+  }
 };
 </script>
 

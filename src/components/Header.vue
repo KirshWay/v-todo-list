@@ -33,7 +33,6 @@ export default {
         });
       }
       this.inputValue = '';
-      this.$emit('toggleWelcome', false)
     },
   },
 };
