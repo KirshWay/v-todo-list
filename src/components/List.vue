@@ -14,15 +14,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import Todo from "@/components/Todo";
 export default {
   name: 'List',
   components: {
     Todo,
   },
-  computed: {
-    ...mapGetters(['allTodos']),
-  },
+  props: {
+    allTodos: {}
+  }
 };
 </script>

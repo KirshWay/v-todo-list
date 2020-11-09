@@ -3,7 +3,7 @@
     <Header />
     <div class="container mt-4">
       <Greeting v-if="allTodos.length === 0" />
-      <List />
+      <List :all-todos="allTodos" />
     </div>
   </div>
 </template>
